@@ -1,53 +1,48 @@
-# Pipbox
+#Watchlist
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+##Követelményanalízis
+Alapvetően ezeket a dolgokat várjunk el a programtól:
+* Lehessen új filmeket felvenni
+* Lehessen a meglévő filmeket kilistázni
+* Lehessen a meglévő filmeket szerkeszteni
+* Lehessen a meglévő filmeket törölni
+* A filmek perzisztálva legyenek
+* A megnézett filmeket meglehessen jelölni
 
-## Prerequisites
+##Tervezés
+Az adatmodell a következőképpen néz ki
 
-You will need the following things properly installed on your computer.
+![connections](docs/connections.png)
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+Mint látható **egy-sok** kapcsolatról van szó, egy kategóriába több film tartozhat.
 
-## Installation
+##Implementáció
+A feladat a **cloud9** nevű online IDE-ben készült el, melynek címe **http://c9.io**. 
+Teljes értékű fejlesztői felületről van szó, sok nyelvet támogat, és webszervert is képes közvetlenül futtatni, nem utolsó sorban teljesen ingyenes (verziója is van). Fejlesztés közben egy ubuntu rendszer támogat minket a háttérből, mellyel közvetlenül tudunk kommunikálni a megnyitott terminálon keresztül.
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+A program ember-cli 1.3-as verziót használ, és egy REST API végpont segíti a rendeltetésszerű működését.
 
-## Running / Development
+A könyvtárstruktúrában lévő mappák funkciói:
+* docs -> ebben találhatók a dokumentációval kapcsolatos képek
+* app -> az emberjs-t használó apphoz tartozó specifikus fájlok
+* node_modules -> az **npm install** kezdetű parancsokkal telepített modulokat tartalmazza
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
+##Tesztelés
+"ember test" paranccsal indíthatók automatikus tesztek.
 
-Make use of the many generators for code, try `ember help generate` for more details
+##Felhasználói dokumentáció
 
-### Running Tests
+###Futtatáshoz ajánlott hardver- és szoftverkonfiguráció
+Egyedül egy böngésző szükséges a programhoz, ne legyen túl régi. Ha az elmúlt pár évben frissítetted a böngészőt, akkor egész biztosan működni fog. Egy kifejezetten gyenge gépen is jól illene menni a programnak, mivel a lényegi részek szerveren futnak, a kliensoldalon szinte csak a megjelenítés van. Akár egy böngészőt futtatni képes telefon is elbírja.
 
-* `ember test`
-* `ember test --server`
+###A program használata
+Ha éppen fut a program, akkor elérhető a [http://watchlist-ember-soadzoor.c9users.io:8080/](http://watchlist-ember-soadzoor.c9users.io:8080/) oldalon. Az **add** almenüben tudunk filmeket hozzáadni a listához, a **list**-re kattintva jeleníthetjük meg ezeket. Itt ha rákattintunk valamelyikre, akkor szerkesztherjük, megjelölhetjük látottként, és el is távolíthatjuk.
 
-### Building
+###Telepítés lépései
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+Legyen **npm**, **phantomjs**, **bower** és **ember-cli** telepítve. (Linuxon npm install -g ember-cli).
+Zipként letölthetjük githubról az egész projektet, majd az **ember server** paranccsal indíthatjuk a programot. Fontos, hogy fusson a REST API rész is!
 
-### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 

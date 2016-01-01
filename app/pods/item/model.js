@@ -1,9 +1,8 @@
 import DS from 'ember-data';
 
 var Item = DS.Model.extend({
-    type: DS.attr('string'),
+    category: DS.attr('string'),
     name: DS.attr('string'),
-    count: DS.attr('number'),
     isWatched: DS.attr('boolean'),
     isBeingEdited: DS.attr('boolean')
 });

@@ -5,8 +5,7 @@ export default Ember.Controller.extend({
         newItem: function () {
             var item = {};
             item.name = $('[name="name"]').val();
-            item.type = $('[name="type"]').val();
-            item.count = 1;
+            item.category = $('[name="type"]').val();
             item.isWatched = false;
             item.isBeingEdited = true;
             this.store.createRecord('item', item).save();
