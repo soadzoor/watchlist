@@ -1,0 +1,25 @@
+<legend>Add a movie to watchlist</legend>
+<form method="post">
+    <label>Type: </label>
+    <select name="type">
+        <option>Comedy</option>
+        <option>Horror</option>
+        <option>Drama</option>
+        <option>Thriller</option>
+        <option>Musical</option>
+        <option>Romance</option>
+        <option>Fantasy</option>
+        <option>Sci-fi</option>
+        <option>War</option>
+        <option>History</option>
+        <option>Documentary</option>
+        <option>Action</option>
+        <option>Other</option>
+    </select>
+    <br>
+    <label>Name: </label>
+    <input type="text" name="name">
+    <br>
+    <button {{action "newItem"}}>Add</button>
+</form>
+{{outlet}}

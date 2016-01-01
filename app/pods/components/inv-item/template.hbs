@@ -1,0 +1,15 @@
+{{#link-to "inventory.details" data.id}}
+    {{#if data.isBeingEdited}}
+        {{#if data.isWatched}}
+            <li class="equip equipped"><input id={{data.id}} class="liinputtrue" value={{data.name}} disabled={{data.isBeingEdited}}></li>
+        {{else}}
+            <li class="equip"><input id={{data.id}} class="liinputfalse" value={{data.name}} disabled={{data.isBeingEdited}}></li>
+        {{/if}}
+    {{else}}
+        {{#if data.isWatched}}
+            <li class="equip equipped"><input id={{data.id}} class="liinputtrue" value={{data.name}} disabled={{data.isBeingEdited}}></li>
+        {{else}}
+            <li class="equip"><input id={{data.id}} class="liinputfalse" value={{data.name}} disabled={{data.isBeingEdited}}></li>
+        {{/if}}
+    {{/if}}
+{{/link-to}}

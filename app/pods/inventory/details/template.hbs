@@ -1,0 +1,24 @@
+<h1>{{model.name}}</h1>
+<table>
+    <tr>
+        <td>Category</td>
+        <td>{{model.type}}</td>
+    </tr>
+</table>
+
+<button {{action "removeItem" model}}>Delete</button>
+
+
+{{#if model.isBeingEdited}}
+    <button {{action "equipItem" model}}>Edit</button>
+{{else}}
+    <button {{action "equipItem" model}}>Done</button>
+{{/if}}
+
+{{#if model.isWatched}}
+    <button {{action "watchItem" model}}>Unmark</button>
+{{else}}
+    <button {{action "watchItem" model}}>Mark as watched</button>
+{{/if}}
+
+{{outlet}}
